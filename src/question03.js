@@ -20,5 +20,32 @@
 // * Qual combustível teve a maior quantidade de abastecimentos.
 // Caso seja informado um tipo de combustível inválido, o abastecimento não deverá ser contabilizado e o usuário deverá informar os dados novamente.
 import leia from 'readline-sync'
+var gasolina =6.20
+var etanol = 4.30
+var diesel = 5.90
+var contadorgasolina =0
+var contadordiesel =0
+var contadoretanol =0
+var quantidadelitrosgas= 0
+var quantidadelitroseta= 0
+var quantidadelitrosdie= 0
+var qntabastecimentos = leia.questionInt('quantas vezes voce abasteceu?')
+while(qntabastecimentos >= 1){
+var abastecido = leia.keyInSelect([ "1 - GASOLINA - R$ 6,20",  "2 - ETANOL - R$ 4,30", "3 - DIESEL - R$ 5,90"], "COM QUAL COMBUSTIVEL VOCE ABASTECEU")
+   if (abastecido ==1){
+    quantidadelitrosgas = leia.questionInt("quantos litros de gasolina voce colocou? ")
 
-var qntabastecimentos = leia.question('quantas vezes voce abasteceu?')
+    contadorgasolina++
+}else if (abastecido ==2){
+    quantidadelitroseta = leia.questionInt("quantos litros de etanol voce colocou? ")
+    
+    contadoretanol++
+}else if (abastecido == 3){
+    quantidadelitrosdie = leia.questionInt("quantos litros de diesel voce colocou? ")
+    
+    contadordiesel++
+   }
+
+    qntabastecimentos--
+}
+console.log(`voce abasteceu com gasolina ${contadorgasolina} vezes, com etanol ${contadoretanol} vezes, e com diesel${contadordiesel} vezes`)
